@@ -7,7 +7,7 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
-import axios from 'axios';
+// import axios from 'axios';
 import Login from './Login';
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
@@ -29,10 +29,10 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
     border: 0,
   },
   }));
-  export default function CustomizedTables() {
-      const [data,setData]=React.useState()
+  export default function CustomizedTables({data,setData}) {
+    
      const [login,setLogin]= React.useState(true)
-      const [load,setLoad]=React.useState(false)
+    //   const [load,setLoad]=React.useState(false)
         // React.useEffect(()=>
         //    async()=>{
         //     setLoad(true)
@@ -42,14 +42,11 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
         //        setLoad(false)
         //        },[]
         //        )
-               React.useEffect(()=>{
-
-                axios.get('https://carsbackend-3oe0.onrender.com/api/v1/post').then((data)=> console.log(data)).catch((error)=>console.log(error))
-              },[]);
+              
            return (
             <>
             <Login login={login} setLogin={setLogin}/>
-    {!load && !login &&
+    { !login &&
     <TableContainer component={Paper} className='px-[3%]'>
         <h1 className='text-[25px] font-bold text-orange-400 text-center uppercase py-[2rem]'>Customer Information</h1>
       <Table sx={{ minWidth: 700 }} aria-label="customized table">
