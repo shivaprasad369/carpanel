@@ -33,15 +33,19 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
       const [data,setData]=React.useState()
      const [login,setLogin]= React.useState(true)
       const [load,setLoad]=React.useState(false)
-        React.useEffect(()=>
-           async()=>{
-            setLoad(true)
-               const d=   await axios.get('https://carsbackend-3oe0.onrender.com/api/v1/post')
-               setData(d.data.data)
-             console.log(d)
-               setLoad(false)
-               },[]
-               )
+        // React.useEffect(()=>
+        //    async()=>{
+        //     setLoad(true)
+        //        const d=   await axios.get('https://carsbackend-3oe0.onrender.com/api/v1/post')
+        //        setData(d.data.data)
+        //      console.log(d)
+        //        setLoad(false)
+        //        },[]
+        //        )
+               useEffect(()=>{
+
+                axios.get('https://carsbackend-3oe0.onrender.com/api/v1/post').then((data)=>setData(data.data.data)).catch((error)=>console.log(error))
+              },[]);
            return (
             <>
             <Login login={login} setLogin={setLogin}/>
