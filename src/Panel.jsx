@@ -36,7 +36,7 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
         React.useEffect(()=>
            async()=>{
             setLoad(true)
-               const d=   await axios.get('https://carsbackend-3oe0.onrender.com/api/v1/post')
+               const d=await axios.get('https://carsbackend-3oe0.onrender.com/api/v1/post')
                setData(d.data.data)
              console.log(d)
                setLoad(false)
