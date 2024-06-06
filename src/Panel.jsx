@@ -44,7 +44,7 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
         //        )
                useEffect(()=>{
 
-                axios.get('https://carsbackend-3oe0.onrender.com/api/v1/post').then((data)=> setData(data.data.data)).catch((error)=>console.log(error))
+                axios.get('https://carsbackend-3oe0.onrender.com/api/v1/post').then((data)=> consolo.log(data)).catch((error)=>console.log(error))
               },[]);
            return (
             <>
